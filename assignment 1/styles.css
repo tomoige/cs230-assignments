@@ -1,26 +1,38 @@
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
 body {
-    background-color: lightblue;
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0px;
+  background-color: gainsboro;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0px;
+  min-height: 100vh;
+  /*position relative so the footer can be placed at the bottom with position absolute */
+  position: relative;
 }
 
 nav {
-    display: flex;
-    gap: 10px;
+  display: flex;
+  gap: 10px;
 }
 
-.card{
-    padding: 8px;
-    margin: 4px;
-    border: 2px solid grey;
-    border-radius: 10px;
-    background-color: floralwhite;
+.card {
+  padding: 8px;
+  margin: 4px;
+  border: 2px solid grey;
+  border-radius: 10px;
+  background-color: floralwhite;
 }
 
-.container{
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
+.container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+footer {
+  position: absolute;
+  bottom: 0px;
+  text-align: center;
+  width: 100%;
 }
