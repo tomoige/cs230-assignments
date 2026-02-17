@@ -9,9 +9,11 @@ body {
   min-height: 100vh;
   /*position relative so the footer can be placed at the bottom with position absolute */
   position: relative;
+  padding-bottom: 50px;
 }
 
 nav {
+  font-size: 20px;
   display: flex;
   gap: 10px;
 }
