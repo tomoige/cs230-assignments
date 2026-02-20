@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="styles.css" />
-    <title>Document</title>
+    <title>Contact</title>
   </head>
   <body>
     <header>
@@ -13,21 +13,27 @@
       </nav>
     </header>
     <main>
-      <form>
-        <p>
-          <label for="username">Name:</label>
-          <input id="username" type="text" name="name" />
-        </p>
-        <p>
-          <label for="useremail">Email:</label>
-          <input id="useremail" type="email" name="useremail" />
-        </p>
-        <p>
-          <label for="message" name="usermessage">Your message:</label>
-          <textarea id="message"></textarea>
-        </p>
-        <button type="submit">Submit</button>
-      </form>
+      <div class="card contact">
+        <form>
+          <h1>Contact Me</h1>
+          <p>
+            <label for="username">Name:</label>
+            <br />
+            <input id="username" type="text" name="name" />
+          </p>
+          <p>
+            <label for="useremail">Email:</label>
+            <br />
+            <input id="useremail" type="email" name="useremail" />
+          </p>
+          <p>
+            <label for="message" name="usermessage">Your message:</label>
+            <br />
+            <textarea id="message" rows="5"></textarea>
+          </p>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
     </main>
     <footer><p>Thomas Cormican 230 Assignment 1</p></footer>
   </body>
