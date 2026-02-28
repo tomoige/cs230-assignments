@@ -23,7 +23,7 @@ nav {
   justify-content: center;
   border-bottom: 1px solid black;
   padding: 10px;
-  background: lightgray;
+  background: rgb(154, 179, 255);
 }
 
 h1 {
@@ -103,6 +103,6 @@ a:hover {
 footer {
   border-top: 1px solid black;
   text-align: center;
-  background: gray;
+  background: rgb(51, 72, 134);
   color: white;
 }
