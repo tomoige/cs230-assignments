@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css" />
+    <title>My Study Dashboard</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="index.html">Home</a><a href="index.html">Tasks</a
+        ><a href="index.html">Profile</a>
+      </nav>
+      <h1>My Study Dashboard</h1>
+      <p id="welcome"></p>
+    </header>
+    <main>
+      <div class="container">
+        <section class="card profile">
+          <h2>Thomas Cormican</h2>
+          <p>I study computer science and have a lot of interests</p>
+          <img src="dogs.jpg" alt="my dogs" />
+        </section>
+        <section class="card">
+          <h2>Weekly Goals</h2>
+          <ul id="goals">
+            <li>Goal 1</li>
+            <li>Goal 2</li>
+            <li>Goal 3</li>
+            <li>Goal 4</li>
+          </ul>
+          <button id="show-goals">Show Goals</button>
+        </section>
+        <section class="card">
+          <h2>Study Status</h2>
+          <p class="status">Status:</p>
+          <p id="session"></p>
+          <button id="add-button">Add Session</button>
+          <button id="reset-button">Reset</button>
+        </section>
+      </div>
+    </main>
+    <footer>
+      <p>Thomas Cormican | CS230</p>
+      <p>Last updated: Feb 2026</p>
+      <p>This page is for study tracking</p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
