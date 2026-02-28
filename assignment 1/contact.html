@@ -1,24 +1,40 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <form>
-        <p>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Contact</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </header>
+    <main>
+      <section class="card contact">
+        <form>
+          <h1>Contact Me</h1>
+          <p>
             <label for="username">Name:</label>
-            <input id="username" type="text" name="name"/>
-        </p>
-        <p>
+            <br />
+            <input id="username" type="text" name="name" />
+          </p>
+          <p>
             <label for="useremail">Email:</label>
-            <input id="useremail" type="email" name="useremail"/>
-        </p>
-        <p>
-            <textarea></textarea>
-        </p> 
-        <button type="submit">Submit</button>
-    </form>
-</body>
+            <br />
+            <input id="useremail" type="email" name="useremail" />
+          </p>
+          <p>
+            <label for="message">Your message:</label>
+            <br />
+            <textarea id="message" name="usermessage" rows="5"></textarea>
+          </p>
+          <button type="submit">Submit</button>
+        </form>
+      </section>
+    </main>
+    <footer><p>Thomas Cormican 230 Assignment 1</p></footer>
+  </body>
 </html>
