@@ -58,6 +58,8 @@ img {
 .status::after {
   content: "ACTIVE";
   color: green;
+
+  margin-left: 4px;
 }
 
 @media (max-width: 700px) {
