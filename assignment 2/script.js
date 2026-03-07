@@ -21,12 +21,10 @@ document.getElementById("reset-button").addEventListener("click", () => {
 
 // part 3
 const goals = ["Read notes", "Finish lab", "Practice JavaScript"];
-let goalsString = "";
 
 // print all goals to the console
 goals.forEach((goal) => {
   console.log(goal);
-  goalsString += `<li>${goal}</li>`;
 });
 
 const goalsElement = document.getElementById("goals");
@@ -35,7 +33,11 @@ let goalsShown = false;
 // add goals to html
 document.getElementById("show-goals").addEventListener("click", () => {
   if (!goalsShown)
-    goalsElement.innerHTML = goalsElement.innerHTML + goalsString;
+    goals.forEach((goal) => {
+      let listItem = document.createElement("li");
+      listItem.textContent = goal;
+      goalsElement.appendChild(listItem);
+    });
   goalsShown = true;
 });
 
