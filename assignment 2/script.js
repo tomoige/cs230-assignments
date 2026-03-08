@@ -42,7 +42,7 @@ document.getElementById("show-goals").addEventListener("click", () => {
 });
 
 // part 4
-const hoursStudied = 2;
+const hoursStudied = 3;
 
 if (hoursStudied >= 3) {
   console.log("Good progress");

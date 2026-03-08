@@ -10,6 +10,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 main {
@@ -111,6 +112,7 @@ a {
 a:hover {
   color: white;
   background-color: rgb(51, 72, 134);
+  text-decoration: underline;
 }
 
 .profile:hover {
