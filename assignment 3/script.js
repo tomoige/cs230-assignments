@@ -1,32 +1,51 @@
 const timerElement = document.getElementById("timer");
-let time = parseInt(timerElement.textContent);
 const start = document.getElementById("start-button");
 const pause = document.getElementById("pause-button");
 const stoptimer = document.getElementById("stop-button");
+const INITIAL_TIME = 60000;
 var paused = false;
 var interval;
-var timeInMilliSeconds = 20000;
+var currentMS = INITIAL_TIME;
+reset(INITIAL_TIME);
 
 //takes in the time in seconds and returns the inner HTML for the timer
 function getTime(timeInSeconds) {
   //ternary operator makes sure there is a leading zero if the number goes below 10
-  let seconds =
-    timeInSeconds.toString().split(".")[0].length > 1
-      ? timeInSeconds.toString().split(".")[0]
-      : "0" + timeInSeconds.toString().split(".")[0];
-  let milliseconds = timeInSeconds.toString().split(".")[1] || "00";
-  return `<span class="numberBlock">00</span>:<span class="numberBlock">${seconds}</span>:<span class="numberBlock">${milliseconds}</span>`;
+  let secs = timeInSeconds.toString().split(".")[0].padStart(2, 0);
+  let mins = Math.floor(secs / 60)
+    .toString()
+    .padStart(2, 0);
+  secs = (secs % 60).toString().padStart(2, 0);
+  let ms = timeInSeconds.toString().split(".")[1]
+    ? timeInSeconds.toString().split(".")[1].padEnd(2, 0)
+    : "00";
+  return `<span class="numberBlock">${mins}</span>:<span class="numberBlock">${secs}</span>:<span class="numberBlock">${ms}</span>`;
 }
 
+// resets the timer
+function reset(time) {
+  clearInterval(interval);
+  //reset timer back to time in just
+  currentMS = time;
+  timerElement.innerHTML = getTime(time / 1000);
+  start.disabled = false;
+  pause.disabled = true;
+  stoptimer.disabled = true;
+  timerElement.classList.remove("turnBlack");
+  paused = false;
+  pause.textContent = "Pause";
+}
+
+//gives the interval that makes the timer go
 function getInterval() {
   return setInterval(() => {
     //update time
-    timeInMilliSeconds -= 10;
+    currentMS -= 10;
     // convert time to seconds
-    let timeInSeconds = timeInMilliSeconds / 1000;
+    let timeInSeconds = currentMS / 1000;
     timerElement.innerHTML = getTime(timeInSeconds);
     //check if time is 0
-    if (timeInMilliSeconds == 0) {
+    if (currentMS == 0) {
       //disable all buttons except stop
       start.disabled = true;
       pause.disabled = true;
@@ -34,10 +53,11 @@ function getInterval() {
       clearInterval(interval);
       setTimeout(() => {
         alert("Take a break");
+        reset();
       }, 100);
     }
     //change style when time goes below 15 seconds
-    if (timeInMilliSeconds / 1000 < 15) {
+    if (currentMS / 1000 < 15) {
       timerElement.classList.add("turnBlack");
     }
   }, 10);
@@ -68,16 +88,5 @@ pause.addEventListener("click", () => {
 });
 
 stoptimer.addEventListener("click", () => {
-  clearInterval(interval);
-  //reset timer back to time in just
-  timeInMilliSeconds = 60000;
-  timerElement.firstChild.textContent = "01";
-  timerElement.children[1].textContent = "00";
-  timerElement.children[2].textContent = "00";
-  start.disabled = false;
-  pause.disabled = true;
-  stoptimer.disabled = true;
-  timerElement.classList.remove("turnBlack");
-  paused = false;
-  pause.textContent = "Pause";
+  reset(INITIAL_TIME);
 });
