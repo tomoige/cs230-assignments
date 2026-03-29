@@ -53,7 +53,7 @@ function getInterval() {
       clearInterval(interval);
       setTimeout(() => {
         alert("Take a break");
-        reset();
+        reset(INITIAL_TIME);
       }, 100);
     }
     //change style when time goes below 15 seconds
