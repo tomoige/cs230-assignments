@@ -120,6 +120,7 @@ app.delete("/books/:id", (req, res) => {
   });
 });
 
+// 1.5
 app.listen(3000, () => {
   console.log("Server running on port 3000");
 });
