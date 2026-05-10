@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Albums</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <a href="index.html">Home</a>
+    <a href="artists.html">Artists</a>
+    <a href="albums.html" class="active">Albums</a>
+    <a href="songs.html">Songs</a>
+  </nav>
+
+  <main class="container">
+    <h1>Albums</h1>
+
+    <form id="album-form">
+      <input type="number" id="album_id" placeholder="Album ID" required />
+      <input type="text" id="album_name" placeholder="Album Name" required />
+      <input type="number" id="release_year" placeholder="Release Year" required />
+      <input type="number" id="number_of_listens" placeholder="Number of Listens" required />
+      <input type="number" id="artist_id" placeholder="Artist ID" required />
+    </form>
+
+    <div class="buttons">
+      <button id="create-album" type="button">Create</button>
+      <button id="update-album" type="button">Update</button>
+      <button id="delete-album" type="button">Delete</button>
+      <button id="refresh-albums" type="button">Refresh</button>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Album ID</th>
+          <th>Album Name</th>
+          <th>Release Year</th>
+          <th>Number of Listens</th>
+          <th>Artist ID</th>
+        </tr>
+      </thead>
+      <tbody id="albums-body"></tbody>
+    </table>
+  </main>
+
+  <script src="js/common.js"></script>
+  <script src="js/albums.js"></script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Songs</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <a href="index.html">Home</a>
+    <a href="artists.html">Artists</a>
+    <a href="albums.html">Albums</a>
+    <a href="songs.html" class="active">Songs</a>
+  </nav>
+
+  <main class="container">
+    <h1>Songs</h1>
+
+    <form id="song-form">
+      <input type="number" id="song_id" placeholder="Song ID" required />
+      <input type="text" id="song_name" placeholder="Song Name" required />
+      <input type="number" id="release_year" placeholder="Release Year" required />
+      <input type="number" id="album_id" placeholder="Album ID" required />
+    </form>
+
+    <div class="buttons">
+      <button id="create-song" type="button">Create</button>
+      <button id="update-song" type="button">Update</button>
+      <button id="delete-song" type="button">Delete</button>
+      <button id="refresh-songs" type="button">Refresh</button>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Song ID</th>
+          <th>Song Name</th>
+          <th>Release Year</th>
+          <th>Album ID</th>
+        </tr>
+      </thead>
+      <tbody id="songs-body"></tbody>
+    </table>
+  </main>
+
+  <script src="js/common.js"></script>
+  <script src="js/songs.js"></script>
+</body>
+</html>

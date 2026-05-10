@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Artists</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <a href="index.html">Home</a>
+    <a href="artists.html" class="active">Artists</a>
+    <a href="albums.html">Albums</a>
+    <a href="songs.html">Songs</a>
+  </nav>
+
+  <main class="container">
+    <h1>Artists</h1>
+
+    <form id="artist-form">
+      <input type="number" id="artist_id" placeholder="Artist ID" required />
+      <input type="text" id="artist_name" placeholder="Artist Name" required />
+      <input type="text" id="genre" placeholder="Genre" required />
+      <input type="number" id="monthly_listeners" placeholder="Monthly Listeners" required />
+    </form>
+
+    <div class="buttons">
+      <button id="create-artist" type="button">Create</button>
+      <button id="update-artist" type="button">Update</button>
+      <button id="delete-artist" type="button">Delete</button>
+      <button id="refresh-artists" type="button">Refresh</button>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Artist ID</th>
+          <th>Artist Name</th>
+          <th>Genre</th>
+          <th>Monthly Listeners</th>
+        </tr>
+      </thead>
+      <tbody id="artists-body"></tbody>
+    </table>
+  </main>
+
+  <script src="js/common.js"></script>
+  <script src="js/artists.js"></script>
+</body>
+</html>
